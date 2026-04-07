@@ -5,6 +5,9 @@ let counter = 0
 let inputHistory = []
 let translateHistory = []
 
+
+//Following commented code is for LibreTranslate
+
 // async function translation(){
 //         const res = await fetch("http://127.0.0.1:5000/translate", {
 //         method: "POST",
