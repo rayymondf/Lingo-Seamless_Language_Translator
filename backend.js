@@ -1,24 +1,50 @@
-    const textInput = document.getElementById("textInput");
-    const translationInput = document.getElementById("translationInput");
-    const translateBtn = document.getElementById("translateBtn");
+const textInput = document.getElementById("textInput")
+const translationInput = document.getElementById("translationInput")
+const translateBtn = document.getElementById("translateBtn")
+let counter = 0
+let inputHistory = []
+let translateHistory = []
 
-async function translation(){
-        const res = await fetch("http://127.0.0.1:5000/translate", {
+// async function translation(){
+//         const res = await fetch("http://127.0.0.1:5000/translate", {
+//         method: "POST",
+//         body: JSON.stringify({
+//             q: textInput.value,
+//             source: "en",
+//             target: "fr",
+//             format: "text"
+//         }),
+//         headers: { "Content-Type": "application/json" }
+//     });
+
+//     return await res.json()
+// }
+
+// translateBtn.addEventListener("click", async function(){
+//     const data = await translation()
+//     translationInput.value = data.translatedText
+// })
+
+
+
+async function testDeepL() {
+    const response = await fetch("https://api-free.deepl.com/v2/translate", {
         method: "POST",
+        headers: {
+            "Authorization": "DeepL-Auth-Key 0b7f2edf-519b-4fc1-b0ea-1d694c61180a:fx",
+            "Content-Type": "application/json"
+        },
         body: JSON.stringify({
-            q: textInput.value,
-            source: "en",
-            target: "fr",
-            format: "text"
-        }),
-        headers: { "Content-Type": "application/json" }
+            text: [textInput.value],
+            target_lang: "FR"
+        })
     });
 
-    return await res.json();
+    const data = await response.json();
+    console.log(data.translations[0].text)
+    return data.translations[0].text
 }
 
-
 translateBtn.addEventListener("click", async function(){
-    const data = await translation();
-    translationInput.value = data.translatedText;
+    translationInput.value = await testDeepL()
 })

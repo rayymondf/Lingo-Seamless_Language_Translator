@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Lingo",
+  "version": "1.0",
+  "description": "Seamless Language Translator using DeepL API",
+  "permissions": [],
+  "host_permissions": [
+    "https://api-free.deepl.com/*"
+  ],
+  "background": {
+    "service_worker": "backend.js"
+  },
+  "action": {
+    "default_popup": "panel.html"
+  }
+}
