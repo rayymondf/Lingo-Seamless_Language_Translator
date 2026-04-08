@@ -1,34 +1,17 @@
-<!-- <html>
-    <head>
-        <link rel="stylesheet" href="styles.css">
-    </head>
 
-    <body>
-        <div class="interface">
-            <div class="row">
-                <input type="text" id="textInput" placeholder="Type here">
-            </div>
-            <div class="row">
-                <input type="text" id="translationInput" placeholder="Translation" disabled>
-                <div class="col">
-                    <button id="translateBtn">Translate</button>
-                </div>
-            </div>
-        </div>
-        <script src="backend.js"></script>
-    </body>
-</html> -->
-
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lingo</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="interface">
       <header class="topBar">
         <h1 class="title">Lingo</h1>
-        <!-- Small top action button requested in the layout. -->
-        <button id="translateBtn" class="btnPrimary">Translate</button>
+        <button id="translateBtn" class="btnPrimary" type="button">Translate</button>
       </header>
 
       <section class="card">
@@ -38,11 +21,15 @@
 
       <section class="card">
         <label for="translationInput" class="label">Translation</label>
-        <textarea id="translationInput" placeholder="Translation appears here" rows="4" disabled></textarea>
+        <textarea
+          id="translationInput"
+          placeholder="Translation appears here"
+          rows="4"
+          disabled
+        ></textarea>
 
         <div class="bottomControls">
           <span id="statusText" class="statusText" aria-live="polite"></span>
-          <!-- Small bottom selector requested in the layout. -->
           <select id="targetLanguageSelect" aria-label="Translation language"></select>
         </div>
       </section>

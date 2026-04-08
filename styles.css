@@ -1,29 +1,3 @@
-/* body {
-    margin: 0;
-    padding: 12px;
-    box-sizing: border-box;
-
-    width: 320px;
-    min-width: 280px;
-    max-width: 400px;
-
-    font-family: Arial, sans-serif;
-}
-
-
-
-.row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-}
-
-#textInput,#translationInput{
-    padding: 8px 16px;
-    flex: 1;
-    width: 100%;
-} */
 
 :root {
   --bg: #0b1220;
@@ -40,22 +14,30 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-
   margin: 0;
-  padding: 12px;
+  background: #0b1220;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+body {
+  padding: 0;
   width: 340px;
-  min-width: 300px;
-  max-width: 420px;
   font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
-  background: radial-gradient(circle at top, #121a2f 0%, var(--bg) 55%);
-  color: var(--text);
 }
 
 .interface {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  padding: 14px;
+  color: var(--text);
+  border-radius: 20px;
+  overflow: hidden;
+  background: radial-gradient(circle at top, #121a2f 0%, var(--bg) 58%);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.35);
 }
 
 .topBar {
@@ -74,8 +56,9 @@ body {
 .card {
   background: color-mix(in srgb, var(--card) 92%, black);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 10px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .label {
@@ -88,12 +71,15 @@ body {
 textarea,
 select {
   width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border: none;
+  border-radius: 14px;
   background: var(--input);
   color: var(--text);
   padding: 10px;
   outline: none;
+  box-shadow:
+    0 1px 2px rgba(2, 6, 23, 0.22),
+    inset 0 0 0 1px rgba(71, 85, 105, 0.35);
 }
 
 textarea {
@@ -102,19 +88,20 @@ textarea {
   line-height: 1.4;
 }
 
-
 textarea::placeholder {
   color: #64748b;
 }
 
 textarea:focus,
 select:focus {
-  border-color: #45587e;
+  box-shadow:
+    0 2px 8px rgba(15, 23, 42, 0.4),
+    inset 0 0 0 1px rgba(99, 102, 241, 0.55);
 }
 
 .btnPrimary {
   border: none;
-  border-radius: 10px;
+  border-radius: 14px;
   background: var(--accent);
   color: white;
   font-weight: 600;
@@ -122,10 +109,19 @@ select:focus {
   padding: 8px 12px;
   cursor: pointer;
   transition: background 0.15s ease;
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.35),
+    0 6px 14px rgba(79, 70, 229, 0.35);
 }
 
 .btnPrimary:hover {
   background: var(--accent-hover);
+}
+
+.btnPrimary:focus {
+  box-shadow:
+    0 2px 8px rgba(79, 70, 229, 0.45),
+    0 0 0 1px rgba(165, 180, 252, 0.5);
 }
 
 .btnPrimary:disabled {
