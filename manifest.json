@@ -3,14 +3,17 @@
   "name": "Lingo",
   "version": "1.0",
   "description": "Seamless Language Translator using DeepL API",
-  "permissions": [],
+  "permissions": ["sidePanel"],
   "host_permissions": [
     "https://api-free.deepl.com/*"
   ],
   "background": {
-    "service_worker": "backend.js"
+    "service_worker": "backgroundService.js"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
   },
   "action": {
-    "default_popup": "panel.html"
+    "default_title": "Open Lingo"
   }
 }

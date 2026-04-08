@@ -9,24 +9,14 @@
                 <input type="text" id="textInput" placeholder="Type here">
             </div>
             <div class="row">
-                <label for="targetLanguage" class="languageLabel">Translate to</label>
-                <select id="targetLanguage">
-                    <option value="FR" selected>French</option>
-                    <option value="ES">Spanish</option>
-                    <option value="DE">German</option>
-                    <option value="IT">Italian</option>
-                    <option value="PT-BR">Portuguese (Brazil)</option>
-                    <option value="JA">Japanese</option>
-                    <option value="ZH">Chinese</option>
-                </select>
+                <label for="targetLanguage" class="languageLabel">Translate to: </label>
+                <select id="targetLanguage"></select>
             </div>
             <div class="row">
                 <input type="text" id="translationInput" placeholder="Translation" disabled>
-                <div class="col">
-                    <button id="translateBtn">Translate</button>
-                </div>
+                <button id="translateBtn">Translate</button>
             </div>
         </div>
-        <script src="backend.js"></script>
+        <script src="userInterface.js"></script>
     </body>
 </html>
