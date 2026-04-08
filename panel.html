@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
     <head>
         <link rel="stylesheet" href="styles.css">
     </head>
@@ -17,4 +17,37 @@
         </div>
         <script src="backend.js"></script>
     </body>
+</html> -->
+
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="interface">
+      <header class="topBar">
+        <h1 class="title">Lingo</h1>
+        <!-- Small top action button requested in the layout. -->
+        <button id="translateBtn" class="btnPrimary">Translate</button>
+      </header>
+
+      <section class="card">
+        <label for="textInput" class="label">Text to translate</label>
+        <textarea id="textInput" placeholder="Type or paste text..." rows="4"></textarea>
+      </section>
+
+      <section class="card">
+        <label for="translationInput" class="label">Translation</label>
+        <textarea id="translationInput" placeholder="Translation appears here" rows="4" disabled></textarea>
+
+        <div class="bottomControls">
+          <span id="statusText" class="statusText" aria-live="polite"></span>
+          <!-- Small bottom selector requested in the layout. -->
+          <select id="targetLanguageSelect" aria-label="Translation language"></select>
+        </div>
+      </section>
+    </main>
+
+    <script src="backend.js"></script>
+  </body>
 </html>
