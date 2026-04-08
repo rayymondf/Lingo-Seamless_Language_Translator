@@ -8,7 +8,7 @@
     "https://api-free.deepl.com/*"
   ],
   "background": {
-    "service_worker": "backgroundService.js"
+    "service_worker": "sidePanelServiceWorker.js"
   },
   "side_panel": {
     "default_path": "panel.html"
