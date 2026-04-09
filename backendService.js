@@ -48,7 +48,7 @@ async function testDeepL(selectedLanguage) {
 
 translateBtn.addEventListener("click", async function(){
     translationInput.value = "Translating..."
-        try {
+    try {
         translationInput.value = await testDeepL(targetLanguage.value)
     } catch (error) {
         translationInput.value = "Translation failed"
