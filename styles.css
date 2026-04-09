@@ -1,151 +1,57 @@
 
-:root {
-  --bg: #0b1220;
-  --card: #121a2b;
-  --input: #0f1728;
-  --border: #24304a;
-  --text: #e5e7eb;
-  --muted: #94a3b8;
-  --accent: #4f46e5;
-  --accent-hover: #6366f1;
-}
 
-* {
-  box-sizing: border-box;
-}
-
-html,
-body {
-  margin: 0;
-  background: #0b1220;
-  border-radius: 20px;
-  overflow: hidden;
-}
 
 body {
-  padding: 0;
-  width: 340px;
-  font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    
+    margin: 0;
+    padding: 12px;
+    box-sizing: border-box;
+    width: 360px;
+
+    font-family: sans-serif;
 }
 
 .interface {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  padding: 14px;
-  color: var(--text);
-  border-radius: 20px;
-  overflow: hidden;
-  background: radial-gradient(circle at top, #121a2f 0%, var(--bg) 58%);
-  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    border: none;
+    border-radius: 16px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+    padding: 5% 10%;
 }
 
-.topBar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
-.title {
-  margin: 0;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 0.3px;
+#textInput,
+#translationInput,
+#targetLanguage {
+    padding: 8px 16px;
+    flex: 1;
+    width: 100%;
+    border: 1px solid #cfcfcf;
+    border-radius: 6px;
 }
 
-.card {
-  background: color-mix(in srgb, var(--card) 92%, black);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 10px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+.languageLabel {
+    min-width: 88px;
+    font-size: 14px;
 }
 
-.label {
-  display: inline-block;
-  margin-bottom: 6px;
-  font-size: 12px;
-  color: var(--muted);
+#translateBtn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #1f6feb;
+    color: #fff;
+    cursor: pointer;
 }
 
-textarea,
-select {
-  width: 100%;
-  border: none;
-  border-radius: 14px;
-  background: var(--input);
-  color: var(--text);
-  padding: 10px;
-  outline: none;
-  box-shadow:
-    0 1px 2px rgba(2, 6, 23, 0.22),
-    inset 0 0 0 1px rgba(71, 85, 105, 0.35);
-}
-
-textarea {
-  resize: vertical;
-  min-height: 86px;
-  line-height: 1.4;
-}
-
-textarea::placeholder {
-  color: #64748b;
-}
-
-textarea:focus,
-select:focus {
-  box-shadow:
-    0 2px 8px rgba(15, 23, 42, 0.4),
-    inset 0 0 0 1px rgba(99, 102, 241, 0.55);
-}
-
-.btnPrimary {
-  border: none;
-  border-radius: 14px;
-  background: var(--accent);
-  color: white;
-  font-weight: 600;
-  font-size: 12px;
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background 0.15s ease;
-  box-shadow:
-    0 1px 2px rgba(15, 23, 42, 0.35),
-    0 6px 14px rgba(79, 70, 229, 0.35);
-}
-
-.btnPrimary:hover {
-  background: var(--accent-hover);
-}
-
-.btnPrimary:focus {
-  box-shadow:
-    0 2px 8px rgba(79, 70, 229, 0.45),
-    0 0 0 1px rgba(165, 180, 252, 0.5);
-}
-
-.btnPrimary:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.bottomControls {
-  margin-top: 8px;
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#targetLanguageSelect {
-  width: 48%;
-  min-width: 125px;
-  font-size: 12px;
-  padding: 8px;
-}
-
-.statusText {
-  color: var(--muted);
-  font-size: 11px;
-  min-height: 14px;
+#translateBtn:hover {
+    background: #1756b3;
 }
