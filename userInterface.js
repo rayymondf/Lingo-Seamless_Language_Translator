@@ -5,7 +5,7 @@ async function loadLanguages() {
         const response = await fetch("https://api-free.deepl.com/v2/languages?type=target", {
             method: "GET",
             headers: {
-                "Authorization": "DeepL-Auth-Key "
+                "Authorization": "DeepL-Auth-Key 306a351c-5e97-4478-aea9-ee268364fcda:fx"
             }
         })
 
@@ -30,5 +30,5 @@ async function loadLanguages() {
         console.log(error)
     }
 }
-
+// console.log(targetLanguage.value)
 loadLanguages()

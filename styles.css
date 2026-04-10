@@ -11,9 +11,6 @@
     --accent-hover: #1555bc;
     --focus-ring: rgba(30, 108, 231, 0.16);
     --shadow: 0 16px 36px rgba(34, 68, 124, 0.13);
-    --status-error: #b6505c;
-    --status-success: #2b7b56;
-    --status-warning: #8f6300;
 }
 
 * {
@@ -140,13 +137,4 @@ button:focus-visible {
     transform: translateY(-1px);
 }
 
-@media (max-width: 360px) {
-    body {
-        padding: 10px;
-    }
 
-    .card {
-        padding: 14px;
-        border-radius: 18px;
-    }
-}

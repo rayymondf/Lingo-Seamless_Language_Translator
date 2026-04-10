@@ -1,5 +1,4 @@
 const textInput = document.getElementById("textInput")
-const targetLanguage = document.getElementById("targetLanguage")
 const translationInput = document.getElementById("translationInput")
 const translateBtn = document.getElementById("translateBtn")
 
@@ -30,7 +29,7 @@ async function testDeepL(selectedLanguage) {
     const response = await fetch("https://api-free.deepl.com/v2/translate", {
         method: "POST",
         headers: {
-            "Authorization": "DeepL-Auth-Key ",
+            "Authorization": "DeepL-Auth-Key 306a351c-5e97-4478-aea9-ee268364fcda:fx",
             "Content-Type": "application/json"
         },
         body: JSON.stringify({
@@ -40,31 +39,31 @@ async function testDeepL(selectedLanguage) {
     })
 
     const data = await response.json()
-
-    if (!response.ok || !data.translations || !data.translations[0]) {
-        throw new Error("Translation failed")
+    if (response.status === 456) {
+        translationInput.value = "testDeepL: DeepL API usage ran out"
     }
-
+    else if (response.status === 429){
+        translationInput.value = "testDeepL: Too many DeepL API requests"
+    }
+    else if (response.status === 500){
+        translationInput.value = "testDeepL: DeepL internal server error"
+    }
+    else if (!response.ok || !data.translations || !data.translations[0]) {
+        translationInput.value = "testDeepL: Translation Failed"
+    }
     return data.translations[0].text
 }
 
 
 translateBtn.addEventListener("click", async function(){
-    if (textInput.value.trim() === "") {
-        translationInput.value = "Please enter text first"
-        return
-    }
 
-    if (targetLanguage.value === "") {
-        translationInput.value = "Please choose a language"
-        return
-    }
-
+ 
     translationInput.value = "Translating..."
     try {
         translationInput.value = await testDeepL(targetLanguage.value)
+        console.log(textInput.value + ` (to ${targetLanguage.value}) ` + translationInput.value)
     } catch (error) {
-        translationInput.value = "Translation failed"
-        console.log(error)
+        translationInput.value = "addEventListener: Translation failed"
+        //console.log(error)
     }
 })
