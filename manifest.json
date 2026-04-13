@@ -7,6 +7,12 @@
   "host_permissions": [
     "https://api-free.deepl.com/*"
   ],
+  "icons": {
+    "16": "logo(white).png",
+    "32": "logo(white).png",
+    "48": "logo(white).png",
+    "128": "logo(white).png"
+  },
   "background": {
     "service_worker": "sidePanelServiceWorker.js"
   },
@@ -14,6 +20,10 @@
     "default_path": "panel.html"
   },
   "action": {
-    "default_title": "Open Lingo"
+    "default_title": "Open Lingo",
+    "default_icon": {
+      "16": "logo(white).png",
+      "32": "logo(white).png"
+    }
   }
 }
